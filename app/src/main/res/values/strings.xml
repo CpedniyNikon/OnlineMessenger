@@ -1,0 +1,14 @@
+<resources>
+    <string name="ipAddress">192.168.43.98</string>
+    <string name="app_name">Cha(d)t</string>
+    <string name="enterNick">Email или телефон</string>
+    <string name="enterPassword">Пароль</string>
+    <string name="authorizationText">Войти</string>
+    <string name="registrationText">Зарегистрироваться</string>
+    <string name="settings">Настройки</string>
+    <string name="exit">Выйти</string>
+    <string name="refresh">Обновить</string>
+    <string name="enterText">Сообщение</string>
+    <string name="joinGeneralChat">Войти в общий чат</string>
+    <string name="generalChat">Общий чат</string>
+</resources>
