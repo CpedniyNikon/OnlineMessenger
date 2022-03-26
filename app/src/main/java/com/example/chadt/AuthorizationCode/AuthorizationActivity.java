@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.chadt.GlobalVariables.GLOBALVALUES;
 import com.example.chadt.MainActivity;
 import com.example.chadt.MenuActivity;
 import com.example.chadt.R;
@@ -67,6 +68,7 @@ public class AuthorizationActivity extends AppCompatActivity  {
         if(msgFromServer.equals("You logged in")) {
             Log.d("TAG", "You logged in");
             finish();
+            GLOBALVALUES.name = Name.getText().toString();
             startActivity(new Intent(this, MenuActivity.class));
         }
         if(msgFromServer.equals("Error while logging")) {

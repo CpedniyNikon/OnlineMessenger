@@ -3,6 +3,7 @@ package com.example.chadt.SendingTasks;
 import android.os.AsyncTask;
 
 import com.example.chadt.GlobalVariables.CONSTANTS;
+import com.example.chadt.GlobalVariables.GLOBALVALUES;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -29,8 +30,11 @@ public class MessageSender extends AsyncTask<String, Void, Void> {
             bufferedWriter = new BufferedWriter(outputStreamWriter);
             inputStreamReader = new InputStreamReader(clientSocket.getInputStream());
             bufferedReader = new BufferedReader(inputStreamReader);
-
-            bufferedWriter.write("sendToEveryone " + text);
+            if (!text.equals("")) {
+                bufferedWriter.write("sendToEveryone " + GLOBALVALUES.name + ": " + text);
+            } else {
+                bufferedWriter.write("sendToEveryone " + text);
+            }
             bufferedWriter.newLine();
             bufferedWriter.flush();
             System.out.println(bufferedReader.readLine());

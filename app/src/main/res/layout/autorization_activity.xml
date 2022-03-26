@@ -8,11 +8,13 @@
     tools:context=".AuthorizationCode.AuthorizationActivity">
 
     <Button
+        android:textSize="16sp"
         android:id="@+id/authrstn"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/dimGray"
         android:text="@string/authorizationText"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,36 +27,43 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:background="@color/dimGray2"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         android:ems="10"
         android:hint="@string/enterNick"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:textColorHint="@color/lightGrey"
         android:textColor="@color/lightGrey"
+        android:textColorHint="@color/lightGrey"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/authrstn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.539" />
+        app:layout_constraintVertical_bias="0.724" />
 
     <EditText
+        android:password="true"
+        android:textSize="16sp"
         android:id="@+id/Pass"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:background="@color/dimGray2"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         android:ems="10"
+        android:hint="@string/enterPassword"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:hint="@string/enterPassword"
-        android:textColorHint="@color/lightGrey"
         android:textColor="@color/lightGrey"
-        android:background="@color/dimGray2"
+        android:textColorHint="@color/lightGrey"
         app:layout_constraintBottom_toTopOf="@+id/authrstn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Name"
-        app:layout_constraintVertical_bias="0.565" />
+        app:layout_constraintVertical_bias="0.523"
+        tools:ignore="Deprecated"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/BackFromAuth"

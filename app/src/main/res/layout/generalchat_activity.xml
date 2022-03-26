@@ -18,7 +18,7 @@
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginRight="65dp"
+            android:layout_marginEnd="65dp"
             android:textColor="@color/lightGrey"
             android:background="@color/dimGray"
             android:inputType="textPersonName"
@@ -43,7 +43,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:backgroundTint="@color/darkBlue"
-            app:icon="?attr/actionModeCloseDrawable"></Button>
+            app:icon="?attr/actionModeCloseDrawable" />
 
         <TextView
             android:id="@+id/info"
@@ -54,7 +54,7 @@
             android:gravity="center"
             android:text="@string/generalChat"
             android:textColor="@color/lightGrey"
-            android:textSize="20sp"></TextView>
+            android:textSize="20sp" />
 
         <ScrollView
             android:layout_width="match_parent"

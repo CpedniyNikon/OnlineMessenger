@@ -19,52 +19,59 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
+        android:password="true"
         android:id="@+id/pass"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:ems="10"
+        android:background="@color/dimGray2"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        android:hint="@string/enterPassword"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:hint="@string/enterPassword"
-        android:textColorHint="@color/lightGrey"
         android:textColor="@color/lightGrey"
-        android:background="@color/dimGray2"
+        android:textColorHint="@color/lightGrey"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/registr"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintVertical_bias="0.523"
+        tools:ignore="Deprecated"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/registr"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:backgroundTint="@color/dimGray"
         android:text="@string/registrationText"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass"
-        app:layout_constraintVertical_bias="0.029"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.442"/>
 
     <EditText
         android:id="@+id/name"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="216dp"
+        android:background="@color/dimGray2"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         android:ems="10"
+        android:hint="@string/enterNick"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:hint="@string/enterNick"
-        android:textColorHint="@color/lightGrey"
-        android:background="@color/dimGray2"
         android:textColor="@color/lightGrey"
+        android:textColorHint="@color/lightGrey"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/registr"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.724" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

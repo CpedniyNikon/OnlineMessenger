@@ -3,6 +3,7 @@ package com.example.chadt.AuthorizationCode;
 import android.os.AsyncTask;
 
 import com.example.chadt.GlobalVariables.CONSTANTS;
+import com.example.chadt.algorithms.SHA256;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -35,9 +36,9 @@ public class Authorization extends AsyncTask<String,Void,String> {
 
             inputStreamReader = new InputStreamReader(clientSocket.getInputStream());
             bufferedReader = new BufferedReader(inputStreamReader);
-
-
-            bufferedWriter.write("l " + name + " " + password);
+            SHA256 passwordSHA = new SHA256(password);
+            passwordSHA.encryptText();
+            bufferedWriter.write("l " + name + " " + passwordSHA.getCipherText());
             bufferedWriter.newLine();
             bufferedWriter.flush();
 

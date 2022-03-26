@@ -6,8 +6,9 @@
     android:background="@color/darkBlue">
 
     <Button
+        android:textSize="14sp"
         android:id="@+id/authorizationButton"
-        android:layout_width="220dp"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:backgroundTint="@color/dimGray2"
@@ -18,8 +19,9 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        android:textSize="14sp"
         android:id="@+id/registrationButton"
-        android:layout_width="220dp"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/dimGray2"
         android:text="@string/registrationText"

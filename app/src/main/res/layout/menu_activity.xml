@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="120dp"
+            android:layout_below="@id/rfrsh"
             tools:ignore="SpeakableTextPresentCheck">
 
             <LinearLayout
@@ -39,18 +39,20 @@
             android:id="@+id/rfrsh"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
+            android:layout_below="@id/xt"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="80dp"
             android:backgroundTint="@color/dimGray"
             android:text="@string/refresh"
-            android:textColor="@color/lightGrey" />
+            android:textColor="@color/lightGrey"
+            android:textSize="11sp"/>
 
         <Button
             android:id="@+id/xt"
+            android:textSize="11sp"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
+            android:layout_below="@id/sttngs"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="40dp"
             android:backgroundTint="@color/dimGray"
             android:text="@string/exit"
             android:textColor="@color/lightGrey" />
@@ -62,11 +64,13 @@
             android:layout_alignParentEnd="true"
             android:backgroundTint="@color/dimGray"
             android:text="@string/settings"
-            android:textColor="@color/lightGrey" />
+            android:textColor="@color/lightGrey"
+            android:textSize="11sp" />
 
         <Button
 
             android:id="@+id/jncht"
+            android:textSize="11sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="135dp"

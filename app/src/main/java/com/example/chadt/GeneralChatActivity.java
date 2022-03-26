@@ -49,6 +49,7 @@ public class GeneralChatActivity extends AppCompatActivity {
             System.out.println("sending");
             messageSender = new MessageSender();
             messageSender.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, msgText.getText().toString());
+//            msgText.setText("");
         });
 
         backButton.setOnClickListener(v-> {
