@@ -4,82 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/darkBlue">
+    android:background="@color/white">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
-        <ScrollView
-            android:id="@+id/rfshscrllvw"
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
             android:layout_width="wrap_content"
+            android:layout_height="90dp"
+            android:background="@drawable/navigationbar_holder"
+            android:elevation="-10dp"
+            android:paddingBottom="5dp"
+            android:layout_marginTop="10dp"
+            app:tabIconTint="@color/your_color_selector"
+            app:tabIndicatorColor="#FF0253"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorGravity="bottom"
+            app:tabIndicatorHeight="2dp"
+            app:tabPaddingTop="40dp">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:icon="@drawable/settings" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:icon="@drawable/general_chat" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:icon="@drawable/about" />
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@id/rfrsh"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="0dp"
             tools:ignore="SpeakableTextPresentCheck">
 
-            <LinearLayout
-                android:id="@+id/rfrshlt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rfrsh">
-
-            </LinearLayout>
-
-        </ScrollView>
-
-        <Button
-            android:id="@+id/rfrsh"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/xt"
-            android:layout_alignParentEnd="true"
-            android:backgroundTint="@color/dimGray"
-            android:text="@string/refresh"
-            android:textColor="@color/lightGrey"
-            android:textSize="11sp"/>
-
-        <Button
-            android:id="@+id/xt"
-            android:textSize="11sp"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/sttngs"
-            android:layout_alignParentEnd="true"
-            android:backgroundTint="@color/dimGray"
-            android:text="@string/exit"
-            android:textColor="@color/lightGrey" />
-
-        <Button
-            android:id="@+id/sttngs"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:backgroundTint="@color/dimGray"
-            android:text="@string/settings"
-            android:textColor="@color/lightGrey"
-            android:textSize="11sp" />
-
-        <Button
-
-            android:id="@+id/jncht"
-            android:textSize="11sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="135dp"
-            android:backgroundTint="@color/dimGray"
-            android:ems="10"
-            android:text="@string/joinGeneralChat"
-            android:textColor="@color/white" />
-
+        </androidx.viewpager.widget.ViewPager>
     </RelativeLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

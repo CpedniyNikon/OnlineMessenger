@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.chadt">
-
-    <uses-permission android:name="android.permission.INTERNET" />
+    package="com.example.chadt"
+    android:fitsSystemWindows="true">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,16 +13,22 @@
         android:theme="@style/Theme.Chadt">
         <activity
             android:name=".MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:windowSoftInputMode="adjustPan"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RegistrationCode.RegistrationNickNameActivity"/>
         <activity android:name=".RegistrationCode.RegistrationActivity" />
         <activity android:name=".AuthorizationCode.AuthorizationActivity" />
-        <activity android:name=".MenuActivity" />
-        <activity android:name=".GeneralChatActivity" />
+        <activity android:name=".MenuCode.MenuActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

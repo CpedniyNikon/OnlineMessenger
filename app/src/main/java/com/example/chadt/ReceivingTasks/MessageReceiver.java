@@ -1,12 +1,20 @@
 package com.example.chadt.ReceivingTasks;
 
+import android.content.Context;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.AsyncTask;
-import android.widget.EditText;
+import android.os.Build;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.chadt.GeneralChatActivity;
+import androidx.core.content.ContextCompat;
+
+import com.example.chadt.Fragments.GeneralChatActivity;
+import com.example.chadt.R;
 import com.example.chadt.GlobalVariables.CONSTANTS;
 import com.example.chadt.GlobalVariables.GLOBALVALUES;
 
@@ -19,21 +27,25 @@ import java.net.Socket;
 
 public class MessageReceiver extends AsyncTask<GeneralChatActivity, Void, Void> {
     private Socket clientSocket = null;
+
     private InputStreamReader inputStreamReader = null;
     private BufferedReader bufferedReader = null;
+
     private OutputStreamWriter outputStreamWriter = null;
     private BufferedWriter bufferedWriter = null;
+
     private String msgFromServer = null;
     private GeneralChatActivity generalChatActivity = null;
-    private EditText editText = null;
-    private TextView textView = null;
     private LinearLayout linearLayout = null;
+
+    private Vibrator vibrator;
+    private MediaPlayer mediaPlayer;
+
     private boolean flag = true;
 
     @Override
     protected Void doInBackground(GeneralChatActivity... voids) {
         generalChatActivity = voids[0];
-        editText = voids[0].getEditText();
         linearLayout = voids[0].getLayout();
         System.out.println("MessageReceiver started");
         System.out.println("KEK");
@@ -55,7 +67,6 @@ public class MessageReceiver extends AsyncTask<GeneralChatActivity, Void, Void> 
             System.out.println(msgFromServer = bufferedReader.readLine());
             System.out.println(msgFromServer.substring(0, 25));
             System.out.println(GLOBALVALUES.idOfUser = Integer.parseInt(msgFromServer.substring(26)));
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -64,8 +75,23 @@ public class MessageReceiver extends AsyncTask<GeneralChatActivity, Void, Void> 
             try {
                 msgFromServer = bufferedReader.readLine();
                 System.out.println("MessageReceiver " + msgFromServer);
-                if (!msgFromServer.equals(""))
+                if (!msgFromServer.equals("")) {
+                    if (GLOBALVALUES.Vibration) {
+                        vibrator = (Vibrator) generalChatActivity.getContext().getSystemService(Context.VIBRATOR_SERVICE);
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                            vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+                        } else {
+                            vibrator.vibrate(500);
+                        }
+                    }
+                    if (GLOBALVALUES.Sounds) {
+                        if (mediaPlayer == null) {
+                            mediaPlayer = MediaPlayer.create(generalChatActivity.getContext(), R.raw.notify_sound);
+                        }
+                        mediaPlayer.start();
+                    }
                     publishProgress();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -75,11 +101,29 @@ public class MessageReceiver extends AsyncTask<GeneralChatActivity, Void, Void> 
 
     @Override
     protected void onProgressUpdate(Void... values) {
-        textView = new TextView(generalChatActivity);
-        textView.setLayoutParams(new LinearLayout.LayoutParams(generalChatActivity.getEditText().getWidth(), generalChatActivity.getEditText().getHeight() / 2));
-        textView.setText(msgFromServer);
+        TextView textView = new TextView(generalChatActivity.getContext());
+        textView.setText("  " + msgFromServer + "  ");
+        textView.setBackground(ContextCompat.getDrawable(generalChatActivity.getContext(), R.drawable.chat_message));
         textView.setTextColor(Color.WHITE);
+
+        LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+
+        LinearLayout.LayoutParams imageViewParams = new LinearLayout.LayoutParams(
+                80, 80
+        );
+        ImageView imageView = new ImageView(generalChatActivity.getContext());
+        imageView.setImageResource(R.drawable.avatar);
+
+
+        textViewParams.setMargins(105, 10, 5, 30);
+        textView.setLayoutParams(textViewParams);
         linearLayout.addView(textView);
+        imageViewParams.setMargins(20, -80, 0, 0);
+        imageView.setLayoutParams(imageViewParams);
+        linearLayout.addView(imageView);
         super.onProgressUpdate(values);
     }
 

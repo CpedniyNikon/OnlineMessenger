@@ -4,77 +4,99 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/darkBlue"
+    android:background="@color/white"
     tools:context=".AuthorizationCode.AuthorizationActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:textSize="16sp"
-        android:id="@+id/authrstn"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/dimGray"
-        android:text="@string/authorizationText"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.442"
-        />
+        <EditText
+            android:id="@+id/Name"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/LoginTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/textview_style"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+            android:ems="10"
+            android:hint="@string/enterNick"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:paddingStart="6dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hintColor"
+            android:textSize="16dp"
+            tools:ignore="RtlSymmetry" />
 
-    <EditText
-        android:id="@+id/Name"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:background="@color/dimGray2"
-        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        android:ems="10"
-        android:hint="@string/enterNick"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textColor="@color/lightGrey"
-        android:textColorHint="@color/lightGrey"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/authrstn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.724" />
+        <EditText
+            android:id="@+id/Pass"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/textview_style"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+            android:ems="10"
+            android:hint="@string/enterPassword"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:paddingStart="6dp"
+            android:password="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hintColor"
+            android:textSize="16dp"
+            tools:ignore="Deprecated" />
 
-    <EditText
-        android:password="true"
-        android:textSize="16sp"
-        android:id="@+id/Pass"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:background="@color/dimGray2"
-        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        android:ems="10"
-        android:hint="@string/enterPassword"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textColor="@color/lightGrey"
-        android:textColorHint="@color/lightGrey"
-        app:layout_constraintBottom_toTopOf="@+id/authrstn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Name"
-        app:layout_constraintVertical_bias="0.523"
-        tools:ignore="Deprecated"
-        android:importantForAutofill="no" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/authrstn"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="120dp"
+            android:background="@drawable/circled_button"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/authorizationText"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="28sp" />
 
-    <Button
-        android:id="@+id/BackFromAuth"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/darkBlue"
-        android:textColor="@color/lightGrey"
-        app:icon="?attr/actionModeCloseDrawable"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        <ImageView
+            android:id="@+id/authorizationLogo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            app:srcCompat="@drawable/authorization_logo" />
+
+        <TextView
+            android:id="@+id/authorizationView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="90dp"
+            android:text="Don't have an account? Register it!"
+            android:textColor="#6F6F6F"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/LoginTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/authorizationLogo"
+            android:layout_alignStart="@id/Name"
+            android:layout_marginTop="-5dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Log In"
+            android:textColor="@color/black"
+            android:textSize="45sp" />
+
+
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

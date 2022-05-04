@@ -13,7 +13,6 @@ public class SHA256 {
             Map.entry('8', "1000"), Map.entry('9', "1001"), Map.entry('a', "1010"), Map.entry('b', "1011"),
             Map.entry('c', "1100"), Map.entry('d', "1101"), Map.entry('e', "1110"), Map.entry('f', "1111")
     );
-
     private final Map<String, Character> BtoH = Map.ofEntries(
             Map.entry("0000", '0'), Map.entry("0001", '1'), Map.entry("0010", '2'), Map.entry("0011", '3'),
             Map.entry("0100", '4'), Map.entry("0101", '5'), Map.entry("0110", '6'), Map.entry("0111", '7'),
@@ -173,28 +172,30 @@ public class SHA256 {
     }
 
     public void encryptText() {
-
-
         StringBuilder hashes = new StringBuilder("");
         for (int i = 0; i < text.length(); i++) {
             hashes.append(binaryBased(text.charAt(i)));
         }
+
         int length = hashes.length();
         hashes.append("1");
         while ((hashes.length() + 64) % 512 != 0) {
             hashes.append("0");
         }
         hashes.append(endAppend(length));
+
         for (int i = 0; i < 48; i++) {
             hashes.append("00000000000000000000000000000000");
         }
+
         ArrayList<String> table = new ArrayList<>();
-        String str = "";
+        StringBuilder str = new StringBuilder();
+
         for (int i = 0; i < hashes.length(); i++) {
-            str = str + hashes.charAt(i);
+            str.append(hashes.charAt(i));
             if ((i + 1) % 32 == 0) {
-                table.add(str);
-                str = "";
+                table.add(str.toString());
+                str = new StringBuilder();
             }
         }
 
@@ -205,8 +206,6 @@ public class SHA256 {
             table.set(i, sum);
         }
 
-
-
         String a = fromHexToBinary(h0);
         String b = fromHexToBinary(h1);
         String c = fromHexToBinary(h2);
@@ -215,8 +214,6 @@ public class SHA256 {
         String f = fromHexToBinary(h5);
         String g = fromHexToBinary(h6);
         String h = fromHexToBinary(h7);
-
-
 
         for (int i = 0; i < table.size(); i++) {
             String S1 = xorString(xorString(rightRotate(e, 6), rightRotate(e, 11)), rightRotate(e, 25));
@@ -232,7 +229,6 @@ public class SHA256 {
             d = c;
             c = b;
             b = a;
-
             a = sumBinary(temp1, temp2);
         }
 
@@ -266,6 +262,4 @@ public class SHA256 {
         }
         cipherText = HexDigest.toString();
     }
-
-
 }

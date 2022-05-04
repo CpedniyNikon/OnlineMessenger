@@ -4,15 +4,48 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/authorization_background.xml" value="0.1606837606837607" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/autorization_background.xml" value="0.1606837606837607" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/backgroundlayout.xml" value="0.1606837606837607" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/button_style.xml" value="0.15864978902953586" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/chat_message.xml" value="0.1606837606837607" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/circled_button.xml" value="0.16018518518518518" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/circledbutton_style.xml" value="0.1606837606837607" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/contentholder.xml" value="0.13796296296296295" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/edit_nickname_button.xml" value="0.16018518518518518" />
         <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/ic_launcher_background.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/logo_holder.xml" value="0.1606837606837607" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/logout_holder.xml" value="0.16018518518518518" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/my_message.xml" value="0.146875" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/navigationbar_holder.xml" value="0.1141025641025641" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/navigationbar_style.xml" value="0.1141025641025641" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/settings_holder_button.xml" value="0.1606837606837607" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/shadow.xml" value="0.1" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/sound_and_vibration_holder_button.xml" value="0.1606837606837607" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/sound_holder_button.xml" value="0.16018518518518518" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/square.xml" value="0.14615384615384616" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/switch_button_style.xml" value="0.1606837606837607" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/text_edit.xml" value="0.17407407407407408" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/textview_style.xml" value="0.1" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/drawable/your_color_selector.xml" value="0.17407407407407408" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/font/inter_light.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/font/inter_medium.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/font/inter_regular.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/layout-v28/about_activity.xml" value="0.11574074074074074" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/layout-v28/autorization_activity.xml" value="0.1796875" />
         <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/layout-v29/generalchat_activity.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/layout/about_activity.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/layout/autorization_activity.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/layout/generalchat_activity.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/layout/autorization_activity.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/layout/contain_main.xml" value="0.3925925925925926" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/layout/general_chat_activity.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/layout/generalchat_activity.xml" value="0.5" />
         <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/layout/main_activity.xml" value="0.22" />
-        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/layout/menu_activity.xml" value="0.1" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/layout/menu_activity.xml" value="0.22" />
         <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/layout/privatemessage_activity.xml" value="0.1" />
-        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/layout/registration_activity.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/layout/registration_activity.xml" value="0.22" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/layout/registration_nickname_activity.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/layout/settings_activity.xml" value="0.20498614958448755" />
         <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/carry/AndroidStudioProjects/Chadt/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.19583333333333333" />
       </map>

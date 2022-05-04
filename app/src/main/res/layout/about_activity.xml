@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.AboutActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <TextView
+            android:id="@+id/ContextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="120dp"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:text="About"
+            android:textColor="@color/black"
+            android:textSize="38dp" />
+
+        <ImageView
+            android:id="@+id/chatLogo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="120dp"
+            android:adjustViewBounds="true"
+            android:elevation="100dp"
+            android:src="@drawable/chat_logo" />
+
+        <ImageView
+            android:id="@+id/aboutHolder"
+            android:layout_width="360dp"
+            android:layout_height="340dp"
+            android:layout_below="@id/chatLogo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/info_holder" />
+
+        <TextView
+            android:id="@+id/openSource"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/chatLogo"
+            android:layout_alignStart="@id/aboutHolder"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:text="Open source"
+            android:textColor="#000000"
+            android:textFontWeight="500"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/openSourceTextView"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/openSource"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/inter_regular"
+            android:text="Chat application created for education purposes"
+            android:textColor="#4D4D4D"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/Contributors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/openSourceTextView"
+            android:layout_alignStart="@id/openSource"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:text="Developer"
+            android:textColor="@color/black"
+            android:textFontWeight="600"
+            android:textSize="30dp" />
+
+        <ImageView
+            android:id="@+id/CpedniyNikon"
+            android:layout_width="260dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/Contributors"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/cpedniynikon" />
+
+        <TextView
+            android:id="@+id/links"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/CpedniyNikon"
+            android:layout_alignStart="@id/openSource"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:text="Links:"
+            android:textColor="@color/black"
+            android:textSize="30dp" />
+
+        <ImageView
+            android:id="@+id/GitHub"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/links"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/github" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/chadt_version" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

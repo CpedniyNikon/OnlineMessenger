@@ -14,4 +14,8 @@
     <color name="darkGray">#A9A9A9</color>
     <color name="dimGray">#696969</color>
     <color name="dimGray2">#404040</color>
+    <color name="hintColor">#C0C0C0</color>
+    <color name="continueColor">#FF0253</color>
+    <color name="chatHint">#989898</color>
+    <color name="background">#FF1661</color>
 </resources>

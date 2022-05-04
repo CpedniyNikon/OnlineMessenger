@@ -1,14 +1,15 @@
 <resources>
-    <string name="ipAddress">192.168.43.98</string>
     <string name="app_name">Cha(d)t</string>
-    <string name="enterNick">Email или телефон</string>
-    <string name="enterPassword">Пароль</string>
-    <string name="authorizationText">Войти</string>
-    <string name="registrationText">Зарегистрироваться</string>
-    <string name="settings">Настройки</string>
-    <string name="exit">Выйти</string>
-    <string name="refresh">Обновить</string>
-    <string name="enterText">Сообщение</string>
-    <string name="joinGeneralChat">Войти в общий чат</string>
-    <string name="generalChat">Общий чат</string>
+    <string name="enterNick">Email or Phone Number</string>
+    <string name="enterPassword">Password</string>
+    <string name="authorizationText">Continue</string>
+    <string name="registrationText">Sign-Up</string>
+    <string name="settings">Settings</string>
+    <string name="exit">Exit</string>
+    <string name="refresh">Refresh</string>
+    <string name="enterText">Message</string>
+    <string name="joinGeneralChat">Enter General Chat</string>
+    <string name="generalChat">General Chat</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

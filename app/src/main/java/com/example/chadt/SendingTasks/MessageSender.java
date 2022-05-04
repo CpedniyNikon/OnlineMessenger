@@ -25,15 +25,12 @@ public class MessageSender extends AsyncTask<String, Void, Void> {
         String text = voids[0];
         try {
             clientSocket = new Socket(CONSTANTS.ipAddress, 4000);
-
             outputStreamWriter = new OutputStreamWriter(clientSocket.getOutputStream());
             bufferedWriter = new BufferedWriter(outputStreamWriter);
             inputStreamReader = new InputStreamReader(clientSocket.getInputStream());
             bufferedReader = new BufferedReader(inputStreamReader);
             if (!text.equals("")) {
-                bufferedWriter.write("sendToEveryone " + GLOBALVALUES.name + ": " + text);
-            } else {
-                bufferedWriter.write("sendToEveryone " + text);
+                bufferedWriter.write("sendToEveryone " + GLOBALVALUES.idOfUser + " " + GLOBALVALUES.name + ": " + text);
             }
             bufferedWriter.newLine();
             bufferedWriter.flush();

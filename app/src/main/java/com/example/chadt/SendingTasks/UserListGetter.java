@@ -33,11 +33,9 @@ public class UserListGetter extends AsyncTask<Void,Void, ArrayList<String>> {
             inputStreamReader = new InputStreamReader(clientSocket.getInputStream());
             bufferedReader = new BufferedReader(inputStreamReader);
 
-
             bufferedWriter.write("returnUserList");
             bufferedWriter.newLine();
             bufferedWriter.flush();
-
             int len = bufferedReader.read();
             System.out.println("ShowUsers " + len);
             for(int i = 0; i < len; i++) {
@@ -52,8 +50,6 @@ public class UserListGetter extends AsyncTask<Void,Void, ArrayList<String>> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
         return userList;
     }
 }

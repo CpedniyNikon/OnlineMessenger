@@ -25,10 +25,8 @@ public class Authorization extends AsyncTask<String,Void,String> {
     private String msgFromServer = null;
     @Override
     protected String doInBackground(String... voids) {
-
         String name = voids[0], password  =  voids[1];
         try {
-
             clientSocket = new Socket(CONSTANTS.ipAddress, 4000);
 
             outputStreamWriter = new OutputStreamWriter(clientSocket.getOutputStream());
@@ -36,8 +34,10 @@ public class Authorization extends AsyncTask<String,Void,String> {
 
             inputStreamReader = new InputStreamReader(clientSocket.getInputStream());
             bufferedReader = new BufferedReader(inputStreamReader);
+
             SHA256 passwordSHA = new SHA256(password);
             passwordSHA.encryptText();
+
             bufferedWriter.write("l " + name + " " + passwordSHA.getCipherText());
             bufferedWriter.newLine();
             bufferedWriter.flush();
@@ -45,10 +45,8 @@ public class Authorization extends AsyncTask<String,Void,String> {
             msgFromServer = bufferedReader.readLine();
 
             clientSocket.close();
-
             outputStreamWriter.close();
             bufferedWriter.close();
-
             inputStreamReader.close();
             bufferedReader.close();
         } catch (IOException e) {

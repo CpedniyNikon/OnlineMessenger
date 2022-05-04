@@ -4,74 +4,109 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/darkBlue">
+    android:background="@color/white"
+    >
 
-    <Button
-        android:id="@+id/BackFromReg"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/darkBlue"
-        android:textColor="@color/lightGrey"
-        app:icon="?attr/actionModeCloseDrawable"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:password="true"
-        android:id="@+id/pass"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:background="@color/dimGray2"
-        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        android:hint="@string/enterPassword"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textColor="@color/lightGrey"
-        android:textColorHint="@color/lightGrey"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/registr"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name"
-        app:layout_constraintVertical_bias="0.523"
-        tools:ignore="Deprecated"
-        android:importantForAutofill="no" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/BackFromReg"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/back"
+            android:elevation="100dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-    <Button
-        android:id="@+id/registr"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/dimGray"
-        android:text="@string/registrationText"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.442"/>
+        <ImageView
+            android:id="@+id/registrationLogo"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="-1dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/registration_logo" />
 
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:background="@color/dimGray2"
-        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        android:ems="10"
-        android:hint="@string/enterNick"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textColor="@color/lightGrey"
-        android:textColorHint="@color/lightGrey"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/registr"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.724" />
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/registrationLogo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/textview_style"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+            android:ems="10"
+            android:hint="@string/enterNick"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:paddingStart="6dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hintColor"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/pass"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/textview_style"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+            android:hint="@string/enterPassword"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:paddingStart="6dp"
+            android:password="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hintColor"
+            android:textSize="16dp"
+            tools:ignore="Deprecated" />
+
+        <EditText
+            android:id="@+id/secondPass"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pass"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/textview_style"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+            android:hint="Confirm Password"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:paddingStart="6dp"
+            android:password="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hintColor"
+            android:textSize="16dp"
+            tools:ignore="Deprecated" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/next"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="120dp"
+            android:background="@drawable/circled_button"
+            android:fontFamily="@font/inter_regular"
+            android:text="Next"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="22dp" />
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

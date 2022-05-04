@@ -13,7 +13,6 @@ import java.io.OutputStreamWriter;
 import java.net.Socket;
 
 public class Registration extends AsyncTask<String,Void,String> {
-
     private Socket clientSocket = null;
 
     private OutputStreamWriter outputStreamWriter = null;
@@ -25,8 +24,6 @@ public class Registration extends AsyncTask<String,Void,String> {
     private String msgFromServer = null;
     @Override
     protected String doInBackground(String... voids) {
-
-
         String name = voids[0], password  =  voids[1];
         try {
             clientSocket = new Socket(CONSTANTS.ipAddress, 4000);
@@ -40,17 +37,13 @@ public class Registration extends AsyncTask<String,Void,String> {
             bufferedWriter.write("r " + name + " " + passwordSHA.getCipherText());
             bufferedWriter.newLine();
             bufferedWriter.flush();
-
             msgFromServer = bufferedReader.readLine();
 
             clientSocket.close();
-
             outputStreamWriter.close();
             bufferedWriter.close();
-
             inputStreamReader.close();
             bufferedReader.close();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
