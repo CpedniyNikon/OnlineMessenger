@@ -1,4 +1,11 @@
 ### Android messanger with global chat based on TCP/IP sockets
 #### Server Code - https://github.com/CpedniyNikon/TcpServer
-<img align="left" src="./Authorization.png" width="200"/>
-<img align="left" src="./Authorization.png" width="200"/>
+
+<p float="left">
+    <img src="./Authorization.png" width="160" height="300">
+    <img src="./Registration.png" width="160" height="300">
+    <img src="./RegistrationNickname.png" width="160"  height="300">
+    <img src="./SettingFragment.png" width="160"  height="300">
+    <img src="./ChatFragment.png" width="160" height="300">
+    <img src="./AboutFragment.png" width="160" height="300">
+</p>
