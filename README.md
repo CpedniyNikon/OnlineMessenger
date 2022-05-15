@@ -2,7 +2,7 @@
 #### Server Code - https://github.com/CpedniyNikon/TcpServer
 
 <p float="left">
-    <img src="./Authorization.png" width="160" height="300">
+    <img src="./AuthorizationUser.png" width="160" height="300">
     <img src="./Registration.png" width="160" height="300">
     <img src="./RegistrationNickname.png" width="160"  height="300">
     <img src="./SettingFragment.png" width="160"  height="300">
