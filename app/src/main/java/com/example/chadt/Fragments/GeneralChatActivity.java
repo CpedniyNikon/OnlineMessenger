@@ -25,12 +25,14 @@ import com.example.chadt.AuthorizationCode.AuthorizationActivity;
 import com.example.chadt.GlobalVariables.GLOBALVALUES;
 import com.example.chadt.R;
 import com.example.chadt.ReceivingTasks.MessageReceiver;
+import com.example.chadt.SendingTasks.CommandSender;
 import com.example.chadt.SendingTasks.MessageSender;
 
 public class GeneralChatActivity extends Fragment {
     private LinearLayout chatLayout;
     private EditText msgText;
     private Button sendButton;
+    private MessageReceiver messageReceiver;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,14 +46,14 @@ public class GeneralChatActivity extends Fragment {
         msgText = (EditText) getView().findViewById(R.id.msgText);
         chatLayout = (LinearLayout) getView().findViewById(R.id.chatLayout);
         sendButton.setOnClickListener(v -> {
-            String msg = msgText.getText().toString().replaceAll("\r", "$").replaceAll("\n", "$").replaceAll(" ", "$");
-            showYourMessage(msg);
-            MessageSender messageSender = new MessageSender();
-            messageSender.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, msg);
-            msgText.setText("");
+            String msg = msgText.getText().toString();/*.replaceAll("\r", "$").replaceAll("\n", "$").replaceAll(" ", "$");*/
+            if (!msg.equals("")) {
+                showYourMessage(msg);
+                MessageSender messageSender = new MessageSender();
+                messageSender.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, msg);
+                msgText.setText("");
+            }
         });
-        MessageReceiver messageReceiver = new MessageReceiver();
-        messageReceiver.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, this);
     }
 
     public LinearLayout getLayout() {
@@ -59,8 +61,6 @@ public class GeneralChatActivity extends Fragment {
     }
 
     public void showYourMessage(String msg) {
-
-
         TextView textView = new TextView(getContext());
         textView.setText("  " + msg + "  ");
         textView.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.my_message));
@@ -78,7 +78,8 @@ public class GeneralChatActivity extends Fragment {
         ImageView imageView = new ImageView(getContext());
         imageView.setImageResource(R.drawable.avatar);
 
-        textViewParams.setMargins(5, 50, 110, 10);
+
+        textViewParams.setMargins(5, 50, 110, 0);
         textView.setLayoutParams(textViewParams);
         chatLayout.addView(textView);
         imageViewParams.setMargins(0, -90, 20, 0);
@@ -86,4 +87,25 @@ public class GeneralChatActivity extends Fragment {
         chatLayout.addView(imageView);
     }
 
+    @Override
+    public void onPause() {
+        messageReceiver.killFlag();
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("onStop");
+        CommandSender commandSender = new CommandSender();
+        commandSender.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "stop " + GLOBALVALUES.idOfUser);
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        messageReceiver = new MessageReceiver();
+        messageReceiver.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, this);
+        System.out.println("onResume");
+        super.onResume();
+    }
 }

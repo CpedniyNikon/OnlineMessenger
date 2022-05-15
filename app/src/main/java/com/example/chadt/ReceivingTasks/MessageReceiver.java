@@ -70,7 +70,31 @@ public class MessageReceiver extends AsyncTask<GeneralChatActivity, Void, Void> 
         } catch (IOException e) {
             e.printStackTrace();
         }
-        do {
+        System.out.println("Receiving");
+        try {
+            msgFromServer = bufferedReader.readLine();
+            System.out.println("MessageReceiver! " + msgFromServer);
+            if (!msgFromServer.equals("")) {
+                if (GLOBALVALUES.Vibration) {
+                    vibrator = (Vibrator) generalChatActivity.getContext().getSystemService(Context.VIBRATOR_SERVICE);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+                    } else {
+                        vibrator.vibrate(500);
+                    }
+                }
+                if (GLOBALVALUES.Sounds) {
+                    if (mediaPlayer == null) {
+                        mediaPlayer = MediaPlayer.create(generalChatActivity.getContext(), R.raw.notify_sound);
+                    }
+                    mediaPlayer.start();
+                    publishProgress();
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        while (flag) {
             System.out.println("Receiving");
             try {
                 msgFromServer = bufferedReader.readLine();
@@ -95,9 +119,11 @@ public class MessageReceiver extends AsyncTask<GeneralChatActivity, Void, Void> 
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } while (flag);
+        }
+        System.out.println("ReceivingTask ended");
         return null;
     }
+
 
     @Override
     protected void onProgressUpdate(Void... values) {
@@ -117,18 +143,17 @@ public class MessageReceiver extends AsyncTask<GeneralChatActivity, Void, Void> 
         ImageView imageView = new ImageView(generalChatActivity.getContext());
         imageView.setImageResource(R.drawable.avatar);
 
-
-        textViewParams.setMargins(105, 10, 5, 30);
+        textViewParams.setMargins(110, 50, 5, 0);
         textView.setLayoutParams(textViewParams);
         linearLayout.addView(textView);
-        imageViewParams.setMargins(20, -80, 0, 0);
+        imageViewParams.setMargins(20, -90, 0, 0);
         imageView.setLayoutParams(imageViewParams);
         linearLayout.addView(imageView);
         super.onProgressUpdate(values);
     }
 
-    public void setFlag(boolean flag) {
-        this.flag = flag;
-        System.out.println("postFlag");
+
+    public void killFlag() {
+        this.flag = false;
     }
 }

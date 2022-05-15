@@ -68,8 +68,8 @@
             android:id="@+id/authorizationLogo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scaleType="fitXY"
             android:adjustViewBounds="true"
+            android:scaleType="fitXY"
             app:srcCompat="@drawable/authorization_logo" />
 
         <TextView
@@ -79,7 +79,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="90dp"
-            android:text="Don't have an account? Register it!"
+            android:text="Don't have an account? Sign up"
             android:textColor="#6F6F6F"
             android:textSize="18dp" />
 
@@ -90,8 +90,7 @@
             android:layout_below="@id/authorizationLogo"
             android:layout_alignStart="@id/Name"
             android:layout_marginTop="-5dp"
-            android:fontFamily="@font/montserrat_medium"
-            android:text="Log In"
+            android:text="Log in"
             android:textColor="@color/black"
             android:textSize="45sp" />
 

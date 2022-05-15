@@ -27,7 +27,7 @@ public class MenuActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
-
+    private ViewPageAdapter viewPageAdapter;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_activity);
@@ -46,7 +46,7 @@ public class MenuActivity extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
-        ViewPageAdapter viewPageAdapter = new ViewPageAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        viewPageAdapter = new ViewPageAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         viewPageAdapter.addFragment(new SettingsActivity());
         viewPageAdapter.addFragment(new GeneralChatActivity());
         viewPageAdapter.addFragment(new AboutActivity());
@@ -85,28 +85,8 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
     }
-
-
     private void hiddenKeyboard(View v) {
         InputMethodManager keyboard = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         keyboard.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
-
-
-    @Override
-    protected void onPause() {
-        System.out.println("onStop");
-        CommandSender commandSender = new CommandSender();
-        commandSender.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "stop " + GLOBALVALUES.idOfUser);
-        super.onPause();
-    }
-
-    @Override
-    protected void onRestart() {
-        System.out.println("restart");
-        CommandSender commandSender = new CommandSender();
-        commandSender.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "start " + GLOBALVALUES.idOfUser);
-        super.onRestart();
-    }
-
 }

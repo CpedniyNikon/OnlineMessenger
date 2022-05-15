@@ -71,8 +71,8 @@
             android:fontFamily="@font/inter_medium"
             android:hint="Message..."
             android:paddingStart="20dp"
-            android:textColorHint="@color/chatHint"
             android:textColor="@color/black"
+            android:textColorHint="@color/chatHint"
             android:textSize="20dp"
             tools:ignore="RtlSymmetry" />
 
