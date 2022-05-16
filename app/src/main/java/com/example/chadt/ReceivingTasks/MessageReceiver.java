@@ -71,49 +71,26 @@ public class MessageReceiver extends AsyncTask<GeneralChatActivity, Void, Void> 
             e.printStackTrace();
         }
         System.out.println("Receiving");
-        try {
-            msgFromServer = bufferedReader.readLine();
-            System.out.println("MessageReceiver! " + msgFromServer);
-            if (!msgFromServer.equals("")) {
-                if (GLOBALVALUES.Vibration) {
-                    vibrator = (Vibrator) generalChatActivity.getContext().getSystemService(Context.VIBRATOR_SERVICE);
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                        vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
-                    } else {
-                        vibrator.vibrate(500);
-                    }
-                }
-                if (GLOBALVALUES.Sounds) {
-                    if (mediaPlayer == null) {
-                        mediaPlayer = MediaPlayer.create(generalChatActivity.getContext(), R.raw.notify_sound);
-                    }
-                    mediaPlayer.start();
-                    publishProgress();
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         while (flag) {
             System.out.println("Receiving");
             try {
                 msgFromServer = bufferedReader.readLine();
                 System.out.println("MessageReceiver " + msgFromServer);
                 if (!msgFromServer.equals("")) {
-                    if (GLOBALVALUES.Vibration) {
-                        vibrator = (Vibrator) generalChatActivity.getContext().getSystemService(Context.VIBRATOR_SERVICE);
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                            vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
-                        } else {
-                            vibrator.vibrate(500);
-                        }
-                    }
-                    if (GLOBALVALUES.Sounds) {
-                        if (mediaPlayer == null) {
-                            mediaPlayer = MediaPlayer.create(generalChatActivity.getContext(), R.raw.notify_sound);
-                        }
-                        mediaPlayer.start();
-                    }
+//                    if (GLOBALVALUES.Vibration) {
+//                        vibrator = (Vibrator) generalChatActivity.getContext().getSystemService(Context.VIBRATOR_SERVICE);
+//                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+//                            vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+//                        } else {
+//                            vibrator.vibrate(500);
+//                        }
+//                    }
+//                    if (GLOBALVALUES.Sounds) {
+//                        if (mediaPlayer == null) {
+//                            mediaPlayer = MediaPlayer.create(generalChatActivity.getContext(), R.raw.notify_sound);
+//                        }
+//                        mediaPlayer.start();
+//                    }
                     publishProgress();
                 }
             } catch (IOException e) {

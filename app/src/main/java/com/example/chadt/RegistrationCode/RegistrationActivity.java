@@ -69,7 +69,6 @@ public class RegistrationActivity extends AppCompatActivity {
 
         Back.setOnClickListener(v -> {
             finish();
-//            startActivity(new Intent(this, MainActivity.class));
         });
     }
 
@@ -77,6 +76,7 @@ public class RegistrationActivity extends AppCompatActivity {
         registration = new Registration();
         registration.execute(Name.getText().toString(), Password.getText().toString());
         String msgFromServer = registration.get();
+        System.out.println(msgFromServer);
         SHA256 passwordSHA = new SHA256(Password.getText().toString());
         passwordSHA.encryptText();
         GLOBALVALUES.login = Name.getText().toString();

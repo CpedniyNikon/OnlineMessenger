@@ -24,20 +24,32 @@ public class Registration extends AsyncTask<String,Void,String> {
     private String msgFromServer = null;
     @Override
     protected String doInBackground(String... voids) {
+        System.out.println("registration");
         String name = voids[0], password  =  voids[1];
         try {
+
+            System.out.println("presocket");
+
             clientSocket = new Socket(CONSTANTS.ipAddress, 4000);
             outputStreamWriter = new OutputStreamWriter(clientSocket.getOutputStream());
             bufferedWriter = new BufferedWriter(outputStreamWriter);
+
+            System.out.println("postsocket");
 
             inputStreamReader = new InputStreamReader(clientSocket.getInputStream());
             bufferedReader = new BufferedReader(inputStreamReader);
             SHA256 passwordSHA = new SHA256(password);
             passwordSHA.encryptText();
+
+            System.out.println("premessage");
+
             bufferedWriter.write("r " + name + " " + passwordSHA.getCipherText());
             bufferedWriter.newLine();
             bufferedWriter.flush();
+            System.out.println("postmessage");
             msgFromServer = bufferedReader.readLine();
+
+            System.out.println(msgFromServer);
 
             clientSocket.close();
             outputStreamWriter.close();
