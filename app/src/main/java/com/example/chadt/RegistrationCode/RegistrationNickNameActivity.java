@@ -27,7 +27,7 @@ public class RegistrationNickNameActivity extends AppCompatActivity {
         setContentView(R.layout.registration_nickname_activity);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         getWindow().setNavigationBarColor(getResources().getColor(R.color.white));
-
+        getWindow().setStatusBarColor(getResources().getColor(R.color.background));
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
