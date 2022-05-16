@@ -30,7 +30,7 @@
             android:layout_height="80dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="110dp"
             android:adjustViewBounds="true"
             android:elevation="100dp"
             android:src="@drawable/chat_logo" />
@@ -85,7 +85,7 @@
 
         <ImageView
             android:id="@+id/CpedniyNikon"
-            android:layout_width="260dp"
+            android:layout_width="240dp"
             android:layout_height="60dp"
             android:layout_below="@id/Contributors"
             android:layout_centerHorizontal="true"

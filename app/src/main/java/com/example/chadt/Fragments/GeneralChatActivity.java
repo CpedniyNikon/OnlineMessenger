@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.chadt.AuthorizationCode.AuthorizationActivity;
@@ -33,7 +34,6 @@ public class GeneralChatActivity extends Fragment {
     private EditText msgText;
     private Button sendButton;
     private MessageReceiver messageReceiver;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
