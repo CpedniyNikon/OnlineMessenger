@@ -9,4 +9,4 @@
     <img src="./ChatFragment.png" width="160" height="300">
     <img src="./AboutFragment.png" width="160" height="300">
 </p>
-https://youtu.be/kMLbVd-82UI
+https://www.youtube.com/watch?v=AWJInZSH1Gw
