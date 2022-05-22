@@ -9,7 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <TextView
             android:id="@+id/ContextView"
             android:layout_width="wrap_content"
@@ -48,8 +47,7 @@
             android:layout_alignBottom="@id/msgText"
             android:layout_alignParentTop="true"
             android:layout_marginTop="100dp"
-            android:layout_marginBottom="50dp"
-            android:overScrollMode="never"
+            android:layout_marginBottom="60dp"
             tools:ignore="SpeakableTextPresentCheck">
 
             <LinearLayout

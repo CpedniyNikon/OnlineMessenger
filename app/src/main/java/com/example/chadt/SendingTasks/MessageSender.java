@@ -24,7 +24,7 @@ public class MessageSender extends AsyncTask<String, Void, Void> {
         System.out.println("sendingProcess");
         String text = voids[0];
         try {
-            clientSocket = new Socket(CONSTANTS.ipAddress, 4000);
+            clientSocket = new Socket(CONSTANTS.ipAddress, CONSTANTS.port);
             outputStreamWriter = new OutputStreamWriter(clientSocket.getOutputStream());
             bufferedWriter = new BufferedWriter(outputStreamWriter);
             inputStreamReader = new InputStreamReader(clientSocket.getInputStream());

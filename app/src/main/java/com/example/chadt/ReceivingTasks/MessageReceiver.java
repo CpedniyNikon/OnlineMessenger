@@ -51,7 +51,7 @@ public class MessageReceiver extends AsyncTask<GeneralChatActivity, Void, Void> 
         System.out.println("KEK");
         try {
             System.out.println("preSocket");
-            clientSocket = new Socket(CONSTANTS.ipAddress, 4000);
+            clientSocket = new Socket(CONSTANTS.ipAddress, CONSTANTS.port);
             System.out.println("postSocket");
             System.out.println("socketConnected");
 
@@ -77,20 +77,6 @@ public class MessageReceiver extends AsyncTask<GeneralChatActivity, Void, Void> 
                 msgFromServer = bufferedReader.readLine();
                 System.out.println("MessageReceiver " + msgFromServer);
                 if (!msgFromServer.equals("")) {
-//                    if (GLOBALVALUES.Vibration) {
-//                        vibrator = (Vibrator) generalChatActivity.getContext().getSystemService(Context.VIBRATOR_SERVICE);
-//                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//                            vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
-//                        } else {
-//                            vibrator.vibrate(500);
-//                        }
-//                    }
-//                    if (GLOBALVALUES.Sounds) {
-//                        if (mediaPlayer == null) {
-//                            mediaPlayer = MediaPlayer.create(generalChatActivity.getContext(), R.raw.notify_sound);
-//                        }
-//                        mediaPlayer.start();
-//                    }
                     publishProgress();
                 }
             } catch (IOException e) {

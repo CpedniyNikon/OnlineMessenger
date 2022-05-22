@@ -27,7 +27,7 @@ public class Authorization extends AsyncTask<String,Void,String> {
     protected String doInBackground(String... voids) {
         String name = voids[0], password  =  voids[1];
         try {
-            clientSocket = new Socket(CONSTANTS.ipAddress, 4000);
+            clientSocket = new Socket(CONSTANTS.ipAddress, CONSTANTS.port);
 
             outputStreamWriter = new OutputStreamWriter(clientSocket.getOutputStream());
             bufferedWriter = new BufferedWriter(outputStreamWriter);

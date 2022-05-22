@@ -26,7 +26,7 @@ public class RegistrationNickName extends AsyncTask<String, Void, Void> {
     protected Void doInBackground(String... voids) {
         String name = voids[0];
         try {
-            clientSocket = new Socket(CONSTANTS.ipAddress, 4000);
+            clientSocket = new Socket(CONSTANTS.ipAddress, CONSTANTS.port);
             outputStreamWriter = new OutputStreamWriter(clientSocket.getOutputStream());
             bufferedWriter = new BufferedWriter(outputStreamWriter);
 

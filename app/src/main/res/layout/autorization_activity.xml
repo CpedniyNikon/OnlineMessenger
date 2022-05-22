@@ -59,7 +59,7 @@
             android:layout_marginBottom="120dp"
             android:background="@drawable/circled_button"
             android:fontFamily="@font/inter_regular"
-            android:text="@string/authorizationText"
+            android:text="Sing In"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="28sp" />

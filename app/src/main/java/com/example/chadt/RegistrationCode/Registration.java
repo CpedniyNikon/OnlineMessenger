@@ -30,7 +30,7 @@ public class Registration extends AsyncTask<String,Void,String> {
 
             System.out.println("presocket");
 
-            clientSocket = new Socket(CONSTANTS.ipAddress, 4000);
+            clientSocket = new Socket(CONSTANTS.ipAddress, CONSTANTS.port);
             outputStreamWriter = new OutputStreamWriter(clientSocket.getOutputStream());
             bufferedWriter = new BufferedWriter(outputStreamWriter);
 
