@@ -1,4 +1,5 @@
 ### Android messanger with global chat based on TCP/IP sockets
+### UX Designer - https://github.com/commonPlaceC
 #### Server Code - https://github.com/CpedniyNikon/TcpServer
 
 <p float="left">
